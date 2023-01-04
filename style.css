@@ -1,0 +1,199 @@
+@import url('https://fonts.cdnfonts.com/css/somar-sans');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Somar Sans', sans-serif;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+
+header{
+    width: 100%;
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all;
+    animation-duration: 1s;
+    animation-name: header-translate;
+    animation-iteration-count: 1;
+}
+header img{
+    width: 2cm;
+    height: 2cm;
+    cursor: pointer;
+}
+header nav{
+    width: 60%;
+}
+header nav ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+header nav ul li{
+    font-size: medium;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main h1{
+    font-size: 50px;
+    letter-spacing: 50px;
+    transform: translate(1%,100%);
+    transition: all;
+    animation-duration: 1s;
+    animation-name: h1-translate;
+    animation-iteration-count: 1;
+}
+
+main h3{
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 200;
+    display: flex;
+    gap: 0 3cm;
+    transform: translate(-2%, 150%);
+    transition: all;
+    animation-duration: 1s;
+    animation-name: h3-translate;
+    animation-iteration-count: 1;
+}
+
+main img{
+    position: absolute;
+}
+main img#city {
+    z-index: -1;
+    bottom: 0%;
+    width: 100%;
+    transition: all;
+    animation-duration: 1s;
+    animation-name: city-translate;
+    animation-iteration-count: 1;
+}
+
+main img#plane {
+    z-index: -2;
+    left: 20%;
+    bottom: 30%;
+    width: 150px;
+    transition: all;
+    animation-duration: 1s;
+    animation-name: plane-translate;
+    animation-iteration-count: 1;
+}
+
+@keyframes header-translate {
+    from {
+        transform: translateY(-30%);
+        opacity: 0%;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 100%;
+    }
+}
+
+@keyframes h1-translate {
+    from {
+        transform: translate(1%,0%);
+        opacity: 0%;
+    }
+    to {
+        transform: translate(1%, 100%);
+        opacity: 100%;
+    }
+}
+
+@keyframes h3-translate {
+    from {
+        transform: translate(-2%, 300%);
+        opacity: 0%;
+    }
+    to {
+        transform: translate(-2%, 150%);
+        opacity: 100%;
+    }
+}
+@keyframes city-translate {
+    from {
+        transform: translateY(50%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes plane-translate {
+    from {
+        transform: translate(-150%, 250%);
+    }
+    to {
+        transform: translate(0%, 0%);
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    header{
+        padding: 20px 100px;
+    }
+    main h1{
+        font-size: 80px;
+        letter-spacing: 70%;
+    }
+    main h3 {
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    header{
+        padding: 40px 150px;
+    }
+    header nav {
+        width: 40%;
+    }
+    main h1{
+        font-size: 100px;
+        letter-spacing: 120px;
+        transform: translate(1%, 200%);
+    }
+    main h3 {
+        font-size: 60px;
+        gap: 0 5cm;
+        transform: translate(-2%, 350%);
+    }
+    main img#plane{
+        width: 300px;
+    }
+    @keyframes h1-translate {
+        from {
+            transform: translate(1%, 0%);
+        }
+        to {
+            transform: translate(1%, 200%);
+        }
+    }
+    @keyframes h3-translate {
+        from {
+            transform: translate(-2%, 600%);
+        }
+        to {
+            transform: translateY(-2%, 350%);
+        }
+    }
+}
